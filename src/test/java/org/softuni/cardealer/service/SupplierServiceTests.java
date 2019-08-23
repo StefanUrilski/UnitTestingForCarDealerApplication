@@ -36,7 +36,7 @@ public class SupplierServiceTests {
         modelMapper = new ModelMapper();
         supplierService = new SupplierServiceImpl(supplierRepository, modelMapper);
         testSupplier = new SupplierServiceModel();
-        testSupplier.setName("FirstTestName");
+        testSupplier.setName("TestName");
     }
 
     @Test
@@ -88,14 +88,6 @@ public class SupplierServiceTests {
         supplierService.editSupplier(testSupplier);
     }
 
-    @Test(expected = Exception.class)
-    public void editSupplier_whenNameIsNull_expectException() {
-        SupplierServiceModel supplier = supplierService.saveSupplier(testSupplier);
-
-        supplier.setName(null);
-        supplierService.editSupplier(supplier);
-    }
-
     @Test
     public void deleteSupplier_whenDeletedSupplier_expectSameSupplier() {
         SupplierServiceModel actual = supplierService.saveSupplier(testSupplier);
@@ -117,7 +109,7 @@ public class SupplierServiceTests {
 
     @Test(expected = Exception.class)
     public void deleteSupplier_whenNotExistSupplier_expectException() {
-        SupplierServiceModel firstSupplier = supplierService.saveSupplier(testSupplier);
+        supplierService.saveSupplier(testSupplier);
         testSupplier.setName("DifferentName");
         testSupplier.setImporter(false);
         SupplierServiceModel secondSupplier = supplierService.saveSupplier(testSupplier);

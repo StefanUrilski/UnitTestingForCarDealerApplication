@@ -5,7 +5,6 @@ import org.softuni.cardealer.domain.entities.CarSale;
 import org.softuni.cardealer.domain.entities.PartSale;
 import org.softuni.cardealer.domain.models.service.CarSaleServiceModel;
 import org.softuni.cardealer.domain.models.service.PartSaleServiceModel;
-import org.softuni.cardealer.domain.models.service.PartServiceModel;
 import org.softuni.cardealer.repository.CarSaleRepository;
 import org.softuni.cardealer.repository.PartSaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
